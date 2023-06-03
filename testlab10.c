@@ -1,8 +1,11 @@
-        /// <summary>
-        /// This test method verifies that the private method FreezeAccount correctly freezes the account by setting the m_frozen field to true.
+       /// <summary>
+        /// This test method verifies that the private method `FreezeAccount` correctly freezes the account by setting the `m_frozen` field to true.
         /// </summary>
         [TestMethod]
-        public void TestVerifyPrivateFrozen()
+        // Checking functionality: Verify that the private method "FreezeAccount" correctly freezes the account
+        // Input: None
+        // Expected result: The "m_frozen" field is set to true
+        public void Test_Verify_Private_Frozen()
         {
             // Invoking the private method "FreezeAccount" on the privateObject instance
             privateObject.Invoke("FreezeAccount");
@@ -14,13 +17,15 @@
             Assert.AreEqual(true, frozen);
         }
 
-
         /// <summary>
         /// This test method verifies that when the account is frozen, 
-        /// invoking the Debit method should throw an exception with the message "Account frozen".
+        /// invoking the `Debit` method should throw an exception with the message "Account frozen".
         /// </summary>
         [TestMethod]
-        public void debit_whenaccountisfrozen_shouldthrowexception()
+        // Checking functionality: Verify that invoking the "Debit" method throws an exception when the account is frozen
+        // Input: Debit amount
+        // Expected result: An exception is thrown with the message "Account frozen"
+        public void Debit_When_Account_Is_Frozen_Should_Throw_Exception()
         {
             // Arrange
             double debitAmount = 4.55;
@@ -44,3 +49,4 @@
             // If no exception is thrown, fail the test
             Assert.Fail("No exception was thrown.");
         }
+    }
